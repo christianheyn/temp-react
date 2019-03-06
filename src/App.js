@@ -11,9 +11,7 @@ const data = [
     { name: 'paul', id: 1 },
     { name: 'tom',  id: 2},
 ]
-const Name = ({ name }) => {
-    return <li>{name}</li>
-}
+const Name = ({ name }) => <li>{name}</li>;
 
 const App = () => {
     const [count, setCount] = useState(0);
