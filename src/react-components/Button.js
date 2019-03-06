@@ -11,12 +11,15 @@ export const Button = (props) => {
     });
 
     return (
-        <button
+        <div
             className={buttonClassName}
             onClick={props.onClick}
+            onKeyDown={props.onClick}
+            role="button"
+            tabIndex="0"
         >
             Button
-        </button>
+        </div>
     );
 }
 
