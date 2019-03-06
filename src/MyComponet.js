@@ -7,7 +7,11 @@ const useCounter = () => {
     return [counter, a]
 };
 
-export const MyComponet = () => {
+
+export const withMyComponet = (hello) => () => {
     const [catAmount, setCounter] = useCounter();
-    return <h1 onClick={setCounter}>Hallo {catAmount}</h1>;
+    return <h1 onClick={setCounter}>{hello} {catAmount}</h1>;
 };
+
+
+

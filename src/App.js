@@ -1,7 +1,9 @@
 import React, { Component, useState } from 'react';
 import './App.css';
 
-import { MyComponet } from './MyComponet';
+import { withMyComponet } from './MyComponet';
+
+const MyComponet = withMyComponet('HUHU!')
 
 class App extends Component {
     render() {
