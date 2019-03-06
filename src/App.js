@@ -3,6 +3,7 @@ import './App.css';
 
 import { Button } from './react-components/Button';
 import { Counter } from './react-components/Counter';
+import { Layout } from './react-components/Layout';
 
 
 const App = () => {
@@ -18,8 +19,10 @@ const App = () => {
 
     return (
         <div className="App">
-            <Button onClick={handleClick} />
-            <Counter count={count} />
+            <Layout>
+                <Button className="test" onClick={handleClick} />
+                <Counter count={count} />
+            </Layout>
         </div>
     );
 };
