@@ -29,7 +29,7 @@ const App = () => {
     return (
         <div className="App">
             <Layout>
-                <Button className="test" onClick={handleClick} />
+                <Button className="test" onClick={handleClick}>HEEE!</Button>
                 <Counter count={count} />
                 { data.map(Name) }
             </Layout>

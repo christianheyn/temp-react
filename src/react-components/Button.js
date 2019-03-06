@@ -2,23 +2,27 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import classnames from 'classnames';
 
-export const Button = (props) => {
+export const Button = ({ children, onClick, className }) => {
+    if (
+        typeof children !== 'string'
+        || typeof onClick !== 'function'
+    ) return null;
 
     const buttonClassName = classnames({
         button: true,
         'is-active': false,
-        [props.className]: props.className
+        [className]: className
     });
 
     return (
         <div
             className={buttonClassName}
-            onClick={props.onClick}
-            onKeyDown={props.onClick}
+            onClick={onClick}
+            onKeyDown={onClick}
             role="button"
             tabIndex="0"
         >
-            Button
+            { children }
         </div>
     );
 }
@@ -26,4 +30,5 @@ export const Button = (props) => {
 
 Button.propTypes = {
     onClick: Proptypes.func.isRequired,
+    children: Proptypes.isRequired
 }
