@@ -12,8 +12,5 @@ export const withMyComponet = (hello) => () => {
     const [catAmount, setCounter] = useCounter();
     const handleClick = () => setCounter(catAmount + 2);
 
-    return <h1 onClick={handleClick}>{hello} {catAmount}</h1>;
+    return <h1 onClick={handleClick}>{hello} test {catAmount}</h1>;
 };
-
-
-

@@ -1,18 +1,27 @@
-import React, { Component, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
-import { withMyComponet } from './MyComponet';
+import { Button } from './react-components/Button';
+import { Counter } from './react-components/Counter';
 
-const MyComponet = withMyComponet('HUHU!')
 
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <MyComponet />
-            </div>
-        );
-    }
-}
+const App = () => {
+    const [count, setCount] = useState(0);
+    const handleClick = () => setCount(count + 1);
+
+    useEffect(() => {
+        window.setInterval(handleClick, 1000);
+        return function cleanup() {
+            window.clearInterval(handleClick, 1000);
+        }
+    })
+
+    return (
+        <div className="App">
+            <Button onClick={handleClick} />
+            <Counter count={count} />
+        </div>
+    );
+};
 
 export default App;
